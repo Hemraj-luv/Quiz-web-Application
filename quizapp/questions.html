@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'quizapp/style.css' %}">
+</head>
+<body>
+
+<div class="box" id="questionscreen">
+
+    <div class="title">
+        <p>Online Quiz Application</p>
+    </div>
+    <div class="header">
+        <div class="scorebox">Score : <span></span></div>
+        <div class="timerbox">Time left : <span></span></div>
+
+    </div>
+    <div class="questionbox">
+        What does HTML stand for ?
+    </div>
+    <div class="optionbox">
+        <span onclick="checkAnswer(this)" data-opt="1"></span>
+         <span onclick="checkAnswer(this)" data-opt="2"></span>
+         <span onclick="checkAnswer(this)" data-opt="3"></span>
+         <span onclick="checkAnswer(this)" data-opt="4"></span>
+    </div>
+
+    <div class="footer">
+        <button>Next</button>
+        <button>Show Result</button>
+    </div>
+
+</div>
+
+<div class="box" id="resultscreen" style="display: none;">
+    <div class="title">
+        Online Quiz Result
+    </div>
+
+    <div class="resultbox">
+        <label>Question:</label>
+        <span id="total Question :">10</span>
+        <label>Attempt:</label>
+        <span id="Attempt Question :">02</span>
+        <label>Correct:</label>
+        <span id="Correct Answer">10</span>
+        <label>Wrong :</label>
+        <span id="Wrong Answers">00</span>
+    </div>
+    <div class="buttonbox">
+        <a href="{% url 'questions' %}">Start Again</a>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+<script src="{% static 'quizapp/script.js' %}"></script>
+<script src="{% static 'quizapp/quiz.js' %}"></script>
+<script src="{% static 'quizapp/jquery-3.5.1.min.js' %}"></script>
+
+</html>
